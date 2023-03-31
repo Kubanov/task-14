@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>API Client Task 14</title>
+</head>
+
+<body>
+
+    <form action="/process" method="post">
+        <label for="servername">
+            <h1> API Endpoint</h1>
+        </label>
+        <input type="text" name="servername" id="servername" placeholder="Введите адресс сервера" required />
+        <h1> Your name</h1>
+        <input type="text" name="name" id="name" placeholder="Введите имя" required />
+       
+    </form>
+
+    <button onclick="myfun()">submit </button>
+    <h3>Server response</h3>
+    <textarea name="area" id="area" cols="90" rows="10" placeholder="Ответ"></textarea>
+</body>
+
+</html>
+
+<script>
+    function myfun() {
+        const x = document.getElementById("servername").value;
+        const y = document.getElementById("name").value;
+        // var z = " 'https://" + x + "?name=" + y + "'";
+        document.getElementById("area").innerHTML = x;
+        //document.getElementById("area").innerHTML = y;
+        fetch( x + '?name=' + encodeURIComponent(y))
+            .then(response => response.text())
+            .then(data => document.getElementById("area").textContent = data)
+    }
+</script>
