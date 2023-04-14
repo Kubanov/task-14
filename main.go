@@ -17,5 +17,9 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/api/hello", helloHandler)
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, "./templates/web.html")
+	})
 	http.ListenAndServe(":90", nil)
+
 }
