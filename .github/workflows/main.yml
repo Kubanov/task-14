@@ -1,4 +1,4 @@
-name: task-14
+name: task-14 ci/cd
 on:
     push:
       branches:
@@ -28,3 +28,4 @@ jobs:
             file: ./Dockerfile
             push: true
             tags: ${{ secrets.DOCKERHUB_USERNAME }}/task-14:latest
+            
