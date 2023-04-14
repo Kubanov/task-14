@@ -25,8 +25,7 @@ jobs:
           uses: docker/build-push-action@v4
           with:
             context: .
-            file: ./Dockerfile
-            push: true
+            file: ./dockerfile
             tags: ${{ secrets.DOCKERHUB_USERNAME }}/task-14:latest
             cache-from: type=gha
             cache-to: type=gha,mode=max
