@@ -2,7 +2,7 @@ FROM golang:1.18
 
 WORKDIR /app
 
-COPY  ./task-14/.
+COPY  ./task 14/.
 
 RUN go build -o main main.go 
 
