@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+env:
+  prod_ip_ubuntu: 192.168.100.1
+
 jobs:
   build:
     runs-on: ubuntu-latest
